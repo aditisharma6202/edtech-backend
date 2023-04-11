@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+const isAuthorize = async(req,res,next)=>{
+    try {
+        if(
+            !req.headers.authorization ||
+            !req.headers.authorization.startsWith('Bearer')||
+            !req.headers.authorization.split(' ')[1]
+
+        ){
+            return res.status(422).json({
+                message:'please provide token'
+            })
+        }
+        next()
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+module.exports ={
+    isAuthorize
+=======
+const isAuthorize = async(req,res,next)=>{
+    try {
+        if(
+            !req.headers.authorization ||
+            !req.headers.authorization.startsWith('Bearer')||
+            !req.headers.authorization.split(' ')[1]
+
+        ){
+            return res.status(422).json({
+                message:'please provide token'
+            })
+        }
+        next()
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+module.exports ={
+    isAuthorize
+>>>>>>> 05c9d8a0b5f5dec2f8e900d688a51e2b01a70d06
+}
